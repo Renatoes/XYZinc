@@ -1,0 +1,81 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.order-form {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.order-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.order-form input,
+.order-form select {
+  padding: 0.5rem 0.65rem;
+  font: inherit;
+}
+
+.field-error {
+  color: #b00020;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.order-form button {
+  justify-self: start;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.order-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.panel {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.panel.success {
+  background: #eefaf0;
+  border: 1px solid #8fd19e;
+}
+
+.panel.error {
+  background: #fff1f1;
+  border: 1px solid #e59a9a;
+}
+
+.receipt {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+}
+
+.receipt dt {
+  font-weight: 700;
+}
+
+.receipt dd {
+  margin: 0;
+}
+
+.panel ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
