@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Billing.Api.IntegrationTests/Billing.Api.IntegrationTests.csproj" />
+  <Project Path="Billing.Api.Tests/Billing.Api.Tests.csproj" />
+  <Project Path="Billing.Api/Billing.Api.csproj" />
+</Solution>
