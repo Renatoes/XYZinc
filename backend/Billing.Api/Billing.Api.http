@@ -1,0 +1,68 @@
+@Billing.Api_HostAddress = http://localhost:5012
+
+GET {{Billing.Api_HostAddress}}/health
+Accept: application/json
+
+###
+
+POST {{Billing.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "ORD-001",
+  "userId": "user-123",
+  "payableAmount": 10.00,
+  "paymentGatewayId": "stripe",
+  "description": "Test order"
+}
+
+###
+
+POST {{Billing.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "ORD-001",
+  "userId": "user-123",
+  "payableAmount": 10.00,
+  "paymentGatewayId": "stripe",
+  "description": "Duplicate request"
+}
+
+###
+
+POST {{Billing.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "ORD-002",
+  "userId": "user-123",
+  "payableAmount": 9.99,
+  "paymentGatewayId": "paypal",
+  "description": "Expected failure"
+}
+
+###
+
+POST {{Billing.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "ORD-003",
+  "userId": "user-123",
+  "payableAmount": 12.34,
+  "paymentGatewayId": "stripe",
+  "description": "Retry demo"
+}
+
+###
+
+POST {{Billing.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "",
+  "userId": "user-123",
+  "payableAmount": -5,
+  "paymentGatewayId": "stripe"
+}
