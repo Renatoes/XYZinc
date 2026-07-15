@@ -12,7 +12,6 @@ public class StripeMockGateway : IPaymentGateway
 
     public Task<PaymentResult> ProcessPaymentAsync(Order order, CancellationToken ct)
     {
-        // Demo rule: amount 12.34 simulates transient Stripe outages that succeed after retries.
         if (order.PayableAmount == 12.34m)
         {
             var attempt = TransientAttempts.AddOrUpdate(order.OrderNumber, 1, (_, count) => count + 1);

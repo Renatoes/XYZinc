@@ -17,7 +17,6 @@ public class PayPalMockGateway : IPaymentGateway
                 "PayPal mock: amount must be positive."));
         }
 
-        // Demo rule: amounts ending in .99 are permanently declined (not retried).
         if (order.PayableAmount % 1m == 0.99m)
         {
             return Task.FromResult(new PaymentResult(
